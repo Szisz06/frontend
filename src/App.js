@@ -112,6 +112,7 @@ export default App;
 
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './Layout';
 import Admin from "./pages/Admin";
 import Auto from "./pages/Auto";
 //import NoPage from './pages/NoPage';
@@ -123,7 +124,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Admin />}></Route>
+      <Route index  element={<Layout />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
         <Route path="/auto" element={<Auto />}></Route>
       </Routes>
     </BrowserRouter>

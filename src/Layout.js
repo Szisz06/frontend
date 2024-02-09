@@ -1,3 +1,4 @@
+import "./App.css";
 import { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 
@@ -12,6 +13,7 @@ const Layout = () => {
     <>
       <main>
         <header>
+          <h1>Heo</h1>
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
            
             <button
@@ -27,8 +29,13 @@ const Layout = () => {
               }`}
             >
               <ul className="navbar-nav">
-                <li className="nav-item active">
+              <li className="nav-item active">
                   <Link className="nav-link" to="/">
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/admin">
                     Admin
                   </Link>
                 </li>
