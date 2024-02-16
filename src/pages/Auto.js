@@ -3,7 +3,7 @@
 import DataService from "../modell/DataService";
 import { Row, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import Autos from "../view/Urlap";
+import Autos from "../view/Autos";
 //import Tablazatom from "./component/tablazatom/Tablazatom";
 //import Urlap from "../view/Urlap";
 const DB = new DataService();

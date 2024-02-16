@@ -1,7 +1,7 @@
 import OneAuto from "./OneAuto";
 import Col from "react-bootstrap/Col";
 
-export default function Auto(props) {
+export default function Autos(props) {
   function show(lista) {
     // ha a lista nem null
     return lista && lista.map((elem, index) => {

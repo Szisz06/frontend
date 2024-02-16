@@ -1,23 +1,19 @@
-
-
-.navbar{
+.navbar {
   font-size: large;
   background-color: black;
 }
-.navbar-toggler{
+.navbar-toggler {
   margin: 20px;
-  width: 80%;
-
 }
 
-article{
+article {
   text-align: center;
 }
 
-img{
+img {
   width: 120px;
 }
 
-li{
+li {
   padding: 20px;
 }
