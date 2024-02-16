@@ -14,6 +14,8 @@ function Auto() {
   const lista = ["Id", "Name", "Year", "Fuel type", "", ""];
   const [objLista, setObjLista] = useState([{}]);
 
+ 
+
   useEffect(() => {
     DB.getData(vegpont, setObjLista);
   }, []);

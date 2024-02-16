@@ -111,24 +111,24 @@ export default App;
         </Row> */
 
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from './Layout';
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Auto from "./pages/Auto";
-//import NoPage from './pages/NoPage';
-//import Layout from './Layout';
-//import Pictures from './pages/Pictures';
-//import Car from './pages/Car';
+import NoPage from "./pages/NoPage";
+import Navbar from "./view/Navbar";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <>
+      <Navbar />
       <Routes>
-      <Route index  element={<Layout />}></Route>
-        <Route path="/admin" element={<Admin />}></Route>
-        <Route path="/auto" element={<Auto />}></Route>
+        <Route index element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/autos" element={<Auto />} />
+        <Route path="*" element={<NoPage />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 

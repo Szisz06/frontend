@@ -1,8 +1,7 @@
-import "./App.css";
 import { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 
-const Layout = () => {
+const Navbar = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
 
   const handleNavToggle = () => {
@@ -11,9 +10,7 @@ const Layout = () => {
 
   return (
     <>
-      <main>
         <header>
-          <h1>Heo</h1>
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
            
             <button
@@ -40,7 +37,7 @@ const Layout = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/auto">
+                  <Link className="nav-link" to="/autos">
                     Autos
                   </Link>
                 </li>
@@ -48,19 +45,8 @@ const Layout = () => {
             </div>
           </nav>
         </header>
-
-        <article>
-          <Outlet />
-        </article>
-
-        <footer></footer>
-      </main>
     </>
   );
 };
 
-export default Layout;
-
-/*<Link className="navbar-brand" to="/">
-<img src="./kepek/Logo.png" alt="Welcome here!" />
-</Link>*/
+export default Navbar;

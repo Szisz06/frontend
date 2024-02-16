@@ -1,6 +1,6 @@
 import { Button, Card } from "react-bootstrap";
 
-export default function Auto(props) {
+export default function OneAuto(props) {
   return (
     <Card style={{ marginTop: "2em" }} className="text-center">
       <Card.Body>
