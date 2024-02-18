@@ -1,6 +1,6 @@
 import React from "react";
 
-const Sor = (props) => {
+export default function TableRow(props) {
   const { obj, kattintas, visibleKeys } = props;
 
   return (
@@ -11,13 +11,21 @@ const Sor = (props) => {
             <td key={key}>{item[key]}</td>
           ))}
           <td>
-            <button className="btn btn-warning mx-3 modify" onClick={() => kattintas(item.auto_id, 'modify')}>Modify</button>
-            <button className="btn btn-danger mx3 delete" onClick={() => kattintas(item.auto_id,'delete')}>Delete</button>
+            <button
+              className="btn btn-warning mx-3 modify"
+              onClick={() => kattintas(item.auto_id, "modify")}
+            >
+              Modify
+            </button>
+            <button
+              className="btn btn-danger mx3 delete"
+              onClick={() => kattintas(item.auto_id, "delete")}
+            >
+              Delete
+            </button>
           </td>
         </tr>
       ))}
     </tbody>
   );
-};
-
-export default Sor;
+}
