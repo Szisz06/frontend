@@ -22,8 +22,8 @@ function Admin() {
 
   function kattintas(id, action) {
     if (action === 'delete') {
-      console.log("Admin.js - Törlés");
-      DB.deleteData(vegpont, { auto_id: id });
+      console.log(id);
+      DB.deleteData(vegpont, id );
     } else {
       // Kezelje a többi műveletet, például a módosítást
     }

@@ -7,7 +7,7 @@ export default function OneAuto(props) {
         <Card.Title>{props.auto.name}</Card.Title>
         <Card.Text>{props.auto.price}$ <br /> {props.auto.fuel_type}</Card.Text>
         <Card.Footer className="text-muted">
-          <Button variant="primary" style={{ width: "100%" }}>
+          <Button variant="primary" className="btn btn-dark" style={{ width: "100%" }}>
             Buy
           </Button>
         </Card.Footer>

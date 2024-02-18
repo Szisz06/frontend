@@ -53,7 +53,7 @@ export default function Urlap(props) {
         <option value="Gasoline">Gasoline</option>
       </Form.Select>
     </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" className="btn btn-dark" type="submit">
         Submit
       </Button>
     </Form>

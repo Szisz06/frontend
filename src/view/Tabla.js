@@ -17,7 +17,7 @@ export default function Tabla(props) {
   }
 
   return (
-    <table className="table table-striped">
+    <table className="table table-striped" style={{ marginTop: "50px" }}>
       <thead>
         <tr>
           {visibleKeys.map((key) => (
