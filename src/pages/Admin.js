@@ -7,33 +7,51 @@ const DB = new DataService();
 
 function Admin() {
   let vegpont = "/autos";
-  const lista = ["Id", "Name", "Year", "Fuel type"];
   const [objLista, setObjLista] = useState([{}]);
+  const [adat, setAdat] = useState({});
 
   useEffect(() => {
-    DB.getData(vegpont, setObjLista);
+    betolt();
   }, []);
 
-  function send(adat) {
-    DB.postData(vegpont, adat);
-    setObjLista([...objLista, adat])
-    console.log("send:", adat);
-  } 
-
-  function kattintas(id, action) {
-    if (action === 'delete') {
-      console.log(id);
-      DB.deleteData(vegpont, id );
-    } else {
-      // Kezelje a többi műveletet, például a módosítást
-    }
+  const betolt = () => {
+    DB.getData(vegpont, setObjLista);
   }
 
+  function send(adat) {
+    if (adat.internalId) {
+      const { internalId, ...updatedData } = adat;
+      DB.putData(`${vegpont}/${internalId}`, updatedData, (response) => {
+        console.log("modified:", response);
+      });
+    } else {
+      DB.postData(vegpont, adat, (response) => {
+        const addedItem = response; 
+        setObjLista([...objLista, addedItem]);
+        console.log("send:", addedItem);
+      });
+    }
+  }
+   
+  
+  
+  function kattintas(internalId, action) {
+    if (action === 'modify') {
+      const selectedItem = objLista.find(item => item.auto_id === internalId);
+      if (selectedItem) {
+
+        setAdat({...selectedItem, internalId: selectedItem.auto_id}); 
+      }
+    } else if (action === 'delete') {
+      DB.deleteData(vegpont, internalId);
+    }
+  }
+  
   return (
     <div className="Admin">
       <Container>
         <Row>
-          <Urlap send={send} />
+          <Urlap send={send} adat={adat}/>
           <Tabla obj={objLista} kattintas={kattintas} />
         </Row>
       </Container>

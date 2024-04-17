@@ -4,6 +4,7 @@ export default class DataService {
   constructor() {
     axios.defaults.baseURL = "http://127.0.0.1:8000/api";
   }
+  
   getData(vegpont, callback) {
     axios
       .get(vegpont)
@@ -16,12 +17,12 @@ export default class DataService {
       .finally(function () {});
   }
 
-  postData(vegpont, data, callback) {
+  putData(vegpont, data, callback) {
     axios
-      .post(vegpont, data)
+      .put(vegpont, data)
       .then(function (response) {
         callback(response.data);
-        console.log("sikeres");
+        console.log("sikeres PUT");
       })
       .catch(function (error) {
         console.log(error);
@@ -29,12 +30,23 @@ export default class DataService {
       .finally(function () {});
   }
 
+  postData(vegpont, data, callback) {
+    axios
+      .post(vegpont, data)
+      .then(function (response) {
+        callback(response.data); 
+        console.log("sikeres POST");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
   deleteData(vegpont, id, callback) {
     axios
       .delete(vegpont + "/" + id)
       .then(function (response) {
         callback(response.data);
-        console.log("sikeres törlés");
+        console.log("sikeres DELETE");
       })
       .catch(function (error) {
         console.log(error);
